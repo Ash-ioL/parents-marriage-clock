@@ -1,7 +1,8 @@
 # My Parents' Marriage Clock
+<hr>
 
 A marriage clock tracking the years, days, minutes, and seconds that my parents have been married to each other.
-<hr style="width:1px;"> 
+<hr> 
 
 Happy wedding anniversary mom and dad! Have a wonderful --th anniversary and I hope you like this little gift I made.
 <hr>
