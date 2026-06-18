@@ -7,8 +7,17 @@
 
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 97.5vh;
     overflow: hidden;
 }
 #clock {
-    font-size: 100px;
+    font-size: clamp(1rem, 15vw, 40vh);
+}
+@media(max-width: 600px) {
+    #clock {
+        font-size: clamp(1rem, 25vw, 40vh);
+    }
 }
