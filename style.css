@@ -12,6 +12,17 @@ body {
     align-items: center;
     height: 97.5vh;
     overflow: hidden;
+    background-image: url("/background.jpg");
+    background-size: 100% auto;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+@media(aspect-ratio < 0.61020175104) {
+    body {
+        background-size: auto 100vh;
+        background-position: top;
+    }
 }
 #clock {
     font-size: clamp(1rem, 15vw, 40vh);
