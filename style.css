@@ -4,10 +4,10 @@
   font-weight: 400;
   font-style: normal;
 }
-@property --arrow-percent {
-    syntax: "<percentage>";
+@property --button-intensity {
+    syntax: "<number>";
     inherits: false;
-    initial-value: 80%;
+    initial-value: 0.5;
 }
 body {
     overflow: hidden;
@@ -19,7 +19,7 @@ body {
 }
 
 @media(aspect-ratio < 0.61020175104) {
-    #body {
+    body {
         background-size: auto 100vh;
         background-position: top;
     }
@@ -56,8 +56,8 @@ body {
     transform: translateY(-100vh);
 }
 
-#bottom-arrow-container {
-    --arrow-percent: 80%;
+#bottom-arrow-container, #top-arrow-container {
+    --button-intensity: 0.7;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,26 +65,17 @@ body {
     bottom: 0;
     width: 100vw;
     height: 10vh;
-    background-image: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.87) var(--arrow-percent), black 100%);
-    transition: --arrow-percent 0.2s ease-in-out;
+    background-image: linear-gradient(rgba(0, 0, 0, calc(var(--button-intensity) - 0.6)) 0%, rgba(0, 0, 0, var(--button-intensity)) 100%);
+    transition: --button-intensity 0.2s ease-in-out;
 }
 
 #top-arrow-container {
     transform: rotateX(180deg);
-    --arrow-percent: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
     top: 0;
-    width: 100vw;
-    height: 10vh;
-    background-image: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.87) var(--arrow-percent), black 100%);
-    transition: --arrow-percent 0.2s ease-in-out;
 }
 
 #bottom-arrow-container:hover, #top-arrow-container:hover {
-    --arrow-percent: 60%;
+    --button-intensity: 0.9;
 }
 
 #bottom-arrow, #top-arrow {
