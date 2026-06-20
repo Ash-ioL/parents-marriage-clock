@@ -4,26 +4,36 @@
   font-weight: 400;
   font-style: normal;
 }
-
-
+@property --arrow-percent {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 80%;
+}
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 97.5vh;
     overflow: hidden;
     background-image: url("/temp-background.jpg");
     background-size: 100% auto;
     background-position: top;
     background-repeat: no-repeat;
+    height: 97.5vh;
 }
 
 @media(aspect-ratio < 0.61020175104) {
-    body {
+    #body {
         background-size: auto 100vh;
         background-position: top;
     }
 }
+
+#clock-container, #notes-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+
 #clock {
     font-size: clamp(1rem, 15vw, 40vh);
 }
@@ -32,3 +42,53 @@ body {
         font-size: clamp(1rem, 25vw, 40vh);
     }
 }
+
+#bottom-arrow-container {
+    --arrow-percent: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 10vh;
+    background-image: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.87) var(--arrow-percent), black 100%);
+    transition: --arrow-percent 0.2s ease-in-out;
+}
+
+#top-arrow-container {
+    transform: rotateX(180deg);
+    --arrow-percent: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 10vh;
+    background-image: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.87) var(--arrow-percent), black 100%);
+    transition: --arrow-percent 0.2s ease-in-out;
+}
+
+#bottom-arrow-container:hover, #top-arrow-container:hover {
+    --arrow-percent: 60%;
+}
+
+#bottom-arrow, #top-arrow {
+    width: 4vh;
+    height: 4vh;
+    transform: rotate(45deg) translateX(-1vh) translateY(-1vh);
+    border-right: 1vh solid rgb(255, 255, 255);
+    border-bottom: 1vh solid rgb(255, 255, 255);
+    transition: all 0.2s ease-in-out;
+}
+
+body:has(#bottom-arrow-container:hover) #bottom-arrow, body:has(#top-arrow-container:hover) #top-arrow {
+    width: 4.1vh;
+    height: 4.1vh;
+    transform: rotate(45deg) translateX(-0.5vh) translateY(-0.5vh);
+    border-right: 1.1vh solid rgb(255, 255, 255);
+    border-bottom: 1.1vh solid rgb(255, 255, 255);
+}
+
+body:has(#clock-container.inactive)
