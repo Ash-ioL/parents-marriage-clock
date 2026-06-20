@@ -15,7 +15,7 @@ body {
     background-size: 100% auto;
     background-position: top;
     background-repeat: no-repeat;
-    height: 97.5vh;
+    height: 100vh;
 }
 
 @media(aspect-ratio < 0.61020175104) {
@@ -25,22 +25,35 @@ body {
     }
 }
 
+#clock {
+    font-size: clamp(1rem, 15vw, 40vh);
+}
+
+@media(max-width: 600px) {
+    #clock {
+        font-size: clamp(1rem, 25vw, 40vh);
+    }
+}
+
 #clock-container, #notes-container {
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-
-#clock {
-    font-size: clamp(1rem, 15vw, 40vh);
+#clock-container {
+    opacity: 1;
+    transform: translateY(0);
 }
-@media(max-width: 600px) {
-    #clock {
-        font-size: clamp(1rem, 25vw, 40vh);
-    }
+#notes-container {
+    opacity: 0;
+    transform: translateY(-100vh);
 }
 
 #bottom-arrow-container {
@@ -91,4 +104,12 @@ body:has(#bottom-arrow-container:hover) #bottom-arrow, body:has(#top-arrow-conta
     border-bottom: 1.1vh solid rgb(255, 255, 255);
 }
 
-body:has(#clock-container.inactive)
+body:not(:has(#clock-container.active)) #notes-container {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body:not(:has(#clock-container.active)) #clock-container {
+    opacity: 0;
+    transform: translateY(100vh);
+}
