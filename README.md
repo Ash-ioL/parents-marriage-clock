@@ -16,7 +16,7 @@ Javascript, HTML, CSS
 ## Tools used:
 Photopea, Google Slides
 
-## Deployed at: https://
+## Deployed at: https://https://ash-iol.github.io/parents-marriage-clock/
 
 ## AI Usage Declaration:
 AI was only used as a learning resource and to look through documentation.
