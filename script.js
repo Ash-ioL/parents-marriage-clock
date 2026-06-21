@@ -37,22 +37,23 @@ let lastSeenMetrics = {
 
 function clock() {
     let now = Math.floor(Date.now()/1000);
+    now -= originalDate;
     let currentMetrics = {
         seconds : now,
-        minutes : Math.floor((seconds/60)*100)/100,
-        hours : Math.floor((seconds/3600)*1000)/1000,
-        days : Math.floor((seconds/86400)*10000)/10000,
-        months : Math.floor((seconds/2629800)*100000)/100000,
-        years : Math.floor((seconds/31557600)*1000000)/1000000 // 365.25 days
+        minutes : Math.floor((now/60)*100)/100,
+        hours : Math.floor((now/3600)*1000)/1000,
+        days : Math.floor((now/86400)*10000)/10000,
+        months : Math.floor((now/2629800)*100000)/100000,
+        years : Math.floor((now/31557600)*1000000)/1000000 // 365.25 days
     }
 
     for (const key in currentMetrics) {
         if (currentMetrics[key] != lastSeenMetrics[key]) {
             lastSeenMetrics[key] = currentMetrics[key];
-            updateSeconds(currentMetrics[key]);
+            updateTime(key, currentMetrics[key]);
         }
     }
 }
 
-setInterval(clock, 50);
+setInterval(clock, 100);
 changePage();

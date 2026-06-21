@@ -10,6 +10,8 @@
     initial-value: 0.5;
 }
 body {
+    display: flex;
+    justify-content: center;
     overflow: hidden;
     background-image: url("/temp-background.jpg");
     background-size: 100% auto;
@@ -70,7 +72,9 @@ body {
 }
 
 #top-arrow-container {
+    display: none;
     transform: rotateX(180deg);
+    opacity: 0;
     top: 0;
 }
 
@@ -103,4 +107,16 @@ body:not(:has(#clock-container.active)) #notes-container {
 body:not(:has(#clock-container.active)) #clock-container {
     opacity: 0;
     transform: translateY(-100vh);
+}
+
+body:not(:has(#clock-container.active)) #bottom-arrow-container {
+    opacity: 0;
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+}
+
+body:not(:has(#clock-container.active)) #top-arrow-container {
+    opacity: 1;
+    display: flex;
+    transition: opacity 0.5s ease-in-out;
 }
