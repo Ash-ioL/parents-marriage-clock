@@ -16,6 +16,7 @@
     initial-value: 0.5;
 }
 body {
+    color: white;
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -33,9 +34,6 @@ body {
     }
 }
 
-.date-box {
-    display: none;
-}
 
 #clock-container, #notes-container {
     position: absolute;
@@ -52,6 +50,9 @@ body {
 #clock-container {
     opacity: 1;
     transform: translateY(0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #notes-container {
     opacity: 0;
@@ -123,14 +124,9 @@ body:not(:has(#clock-container.active)) #top-arrow-container {
 }
 
 #clock {
-    font-size: clamp(1rem, 15vw, 40vh);
+    height: 50vh;
     display: grid;
-}
-
-@media(max-width: 600px) {
-    #clock {
-        font-size: clamp(1rem, 25vw, 40vh);
-    }
+    overflow: hidden;
 }
 
 #clock > * {
@@ -140,60 +136,218 @@ body:not(:has(#clock-container.active)) #top-arrow-container {
 
 @keyframes time0 {
     0% {
+        transform: translateX(-100%);
         opacity: 0;
     }
     3% {
+        transform: translateX(0%);
         opacity: 1;
     }
     13.67% {
+        transform: translateX(0%);
         opacity: 1;
     }
     --.67% {
+        transform: translateX(100%);
+        opacity:0
+    }
+    100% {
+        transform: translateX(100%);
         opacity:0
     }
 }
 
 @keyframes time1 {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
     --.67% {
-
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    19.67% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    30.33% {
+        transform: translateX(0%);
+        opacity: 1;
     }
     33.33% {
-
+        transform: translateX(100%);
+        opacity:0
+    }
+    100% {
+        transform: translateX(100%);
+        opacity:0
     }
 }
 
 @keyframes time2 {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
     33.33% {
-
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    36.33% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    47% {
+        transform: translateX(0%);
+        opacity: 1;
     }
     50% {
-
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
     }
 }
 
 @keyframes time3 {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
     50% {
-
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    53% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    63.67% {
+        transform: translateX(0%);
+        opacity: 1;
     }
     66.67% {
-
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
     }
 }
 
 @keyframes time4 {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
     66.67% {
-
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    69.67% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    80.33% {
+        transform: translateX(0%);
+        opacity: 1;
     }
     83.33% {
-
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
     }
 }
 
 @keyframes time5 {
-    83.33% {
-
-    } 
-    100% {
-
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
     }
+    83.33% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    86.33% {
+        transform: translateX(0%);
+        opacity: 1;
+    } 
+    97% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+#years-date-box {
+    animation: time0 15s linear 0s infinite;
+}
+#months-date-box {
+    animation: time1 15s linear 0s infinite;
+}
+#days-date-box {
+    animation: time2 15s linear 0s infinite;
+}
+#hours-date-box {
+    animation: time3 15s linear 0s infinite;
+}
+#minutes-date-box {
+    animation: time4 15s linear 0s infinite;
+}
+#seconds-date-box {
+    animation: time5 15s linear 0s infinite;
+}
+
+.date-box {
+    display: flex;
+    gap: 1vh;
+    flex-direction: column;
+    height: 50vh;
+    width: 60vw;
+    text-align: center;
+    overflow: hidden;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7)
+}
+
+
+
+.num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0;
+    height: 60%;
+    font-size: clamp(1rem, 8vw, 15vh);
+}
+
+.desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 40%;
+    font-size: clamp(1rem, 8vw, 15vh);
+}
+
+@media(max-width: 600px) {
+    .num {
+        font-size: clamp(1rem, 12vw, 40vh);
+    }
+    .desc {
+        font-size: clamp(1rem, 12vw, 40vh);
+    }
+}
+
+.heart {
+    height: var(--size);
+    aspect-ratio: 1 / 1;
 }
