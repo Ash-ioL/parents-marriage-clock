@@ -126,7 +126,6 @@ body:not(:has(#clock-container.active)) #top-arrow-container {
 #clock {
     height: 50vh;
     display: grid;
-    overflow: hidden;
 }
 
 #clock > * {
