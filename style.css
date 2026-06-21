@@ -53,7 +53,7 @@ body {
 }
 #notes-container {
     opacity: 0;
-    transform: translateY(-100vh);
+    transform: translateY(100vh);
 }
 
 #bottom-arrow-container, #top-arrow-container {
@@ -102,5 +102,5 @@ body:not(:has(#clock-container.active)) #notes-container {
 
 body:not(:has(#clock-container.active)) #clock-container {
     opacity: 0;
-    transform: translateY(100vh);
+    transform: translateY(-100vh);
 }
