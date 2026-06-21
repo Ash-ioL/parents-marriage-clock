@@ -20,7 +20,7 @@ body {
     display: flex;
     justify-content: center;
     overflow: hidden;
-    background-image: url("/temp-background.jpg");
+    background-image: url("./background.jpg");
     background-size: 100% auto;
     background-position: top;
     background-repeat: no-repeat;
@@ -377,8 +377,8 @@ body:not(:has(#clock-container.active)) #top-arrow-container {
 }
 
 #letter {
-    
-    font-size: clamp(1rem, 4vw, 4vh);
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+    font-size: clamp(1rem, 5vw, 4.2vh);
 }
 
 #notes-container {

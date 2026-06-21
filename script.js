@@ -67,7 +67,7 @@ function addHeart() {
     let heartTime = Math.random()*4+3;
 
     let heart = document.createElement('img');
-    heart.setAttribute('src', "/heart.png");
+    heart.setAttribute('src', "./heart.png");
     heart.classList.add("heart");
 
     heart.style.setProperty("--x-pos", heartX+"px");
