@@ -19,8 +19,8 @@ Photopea, Google Slides
 ## AI Usage Declaration:
 AI was only used as a learning resource and to look through documentation.
 
-
-** Deployed at: https://https://ash-iol.github.io/parents-marriage-clock/**
+<hr>
+Deployed at: https://https://ash-iol.github.io/parents-marriage-clock/**
 
 <hr>
 
