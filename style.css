@@ -347,7 +347,42 @@ body:not(:has(#clock-container.active)) #top-arrow-container {
     }
 }
 
+@keyframes heart-up {
+    0% {
+        opacity: 0;
+        transform: translateX(0) translateY(0) scale(0);
+    }
+    5% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(var(--sway)) translateY(calc(-1 * var(--up))) scale(1.5);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(var(--sway)) translateY(calc(-1 * var(--up))) scale(0);
+    }
+}
+
 .heart {
+    position: absolute;
+    bottom: var(--y-pos);
+    left: var(--x-pos);
     height: var(--size);
+    user-select: none;
+    z-index: 0;
     aspect-ratio: 1 / 1;
+    animation: heart-up var(--time) ease-in-out;
+}
+
+#letter {
+    
+    font-size: clamp(1rem, 4vw, 4vh);
+}
+
+#notes-container {
+    display: flex;
+    align-items: center;
+    padding-top: 10vh;
 }

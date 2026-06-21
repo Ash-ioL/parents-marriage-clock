@@ -55,5 +55,35 @@ function clock() {
     }
 }
 
+function addHeart() {
+    let vpHeight = window.innerHeight;
+    let vpWidth = window.innerWidth;
+    vpHeight *= 0.8;
+    let heartX = Math.floor(Math.random() * vpWidth);
+    let heartY = Math.floor(Math.random() * vpHeight);
+    let heartSize = Math.random()*50+30;
+    let heartUp = Math.random()*500+100;
+    let heartSway = Math.random()*200*(Math.random()*2-1);
+    let heartTime = Math.random()*4+3;
+
+    let heart = document.createElement('img');
+    heart.setAttribute('src', "/heart.png");
+    heart.classList.add("heart");
+
+    heart.style.setProperty("--x-pos", heartX+"px");
+    heart.style.setProperty("--y-pos", heartY+"px");
+    heart.style.setProperty("--size", heartSize+"px");
+    heart.style.setProperty("--up", heartUp+"px");
+    heart.style.setProperty("--sway", heartSway+"px");
+    heart.style.setProperty("--time", heartTime+"s");
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, heartTime*1000);
+}
+
+setInterval(addHeart, 300);
 setInterval(clock, 100);
 changePage();
