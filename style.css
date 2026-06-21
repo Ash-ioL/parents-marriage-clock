@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
+.lav {
+  font-family: "Lavishly Yours", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
 .quint {
   font-family: "Quintessential", serif;
   font-weight: 400;
@@ -27,14 +33,8 @@ body {
     }
 }
 
-#clock {
-    font-size: clamp(1rem, 15vw, 40vh);
-}
-
-@media(max-width: 600px) {
-    #clock {
-        font-size: clamp(1rem, 25vw, 40vh);
-    }
+.date-box {
+    display: none;
 }
 
 #clock-container, #notes-container {
@@ -64,6 +64,7 @@ body {
     align-items: center;
     justify-content: center;
     position: fixed;
+    z-index: 1;
     bottom: 0;
     width: 100vw;
     height: 10vh;
@@ -119,4 +120,80 @@ body:not(:has(#clock-container.active)) #top-arrow-container {
     opacity: 1;
     display: flex;
     transition: opacity 0.5s ease-in-out;
+}
+
+#clock {
+    font-size: clamp(1rem, 15vw, 40vh);
+    display: grid;
+}
+
+@media(max-width: 600px) {
+    #clock {
+        font-size: clamp(1rem, 25vw, 40vh);
+    }
+}
+
+#clock > * {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+@keyframes time0 {
+    0% {
+        opacity: 0;
+    }
+    3% {
+        opacity: 1;
+    }
+    13.67% {
+        opacity: 1;
+    }
+    --.67% {
+        opacity:0
+    }
+}
+
+@keyframes time1 {
+    --.67% {
+
+    }
+    33.33% {
+
+    }
+}
+
+@keyframes time2 {
+    33.33% {
+
+    }
+    50% {
+
+    }
+}
+
+@keyframes time3 {
+    50% {
+
+    }
+    66.67% {
+
+    }
+}
+
+@keyframes time4 {
+    66.67% {
+
+    }
+    83.33% {
+
+    }
+}
+
+@keyframes time5 {
+    83.33% {
+
+    } 
+    100% {
+
+    }
 }
