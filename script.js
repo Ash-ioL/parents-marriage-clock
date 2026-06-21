@@ -77,7 +77,7 @@ function addHeart() {
     heart.style.setProperty("--sway", heartSway+"px");
     heart.style.setProperty("--time", heartTime+"s");
 
-    document.body.appendChild(heart);
+    document.getElementById("heart-container").appendChild(heart);
 
     setTimeout(() => {
         heart.remove();

@@ -384,3 +384,13 @@ body:not(:has(#clock-container.active)) #top-arrow-container {
     align-items: center;
     padding-top: 10vh;
 }
+
+#heart-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+}
