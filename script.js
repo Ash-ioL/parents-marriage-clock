@@ -84,6 +84,6 @@ function addHeart() {
     }, heartTime*1000);
 }
 
-setInterval(addHeart, 240);
-setInterval(clock, 20);
+setInterval(addHeart, 300);
+setInterval(clock, 50);
 changePage();
