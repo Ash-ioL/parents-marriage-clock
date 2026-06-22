@@ -34,6 +34,9 @@ Photopea, Google Slides
 ## AI Usage Declaration:
 AI was only used as a learning resource and to search through documentations.
 
+## Note
+Years are defined as 365.25 days in this program. So it is expected to drift by a day every 100 years, which is enough to last a lifetime but just a note.
+
 <hr>
 Deployed at: https://ash-iol.github.io/parents-marriage-clock/
 
