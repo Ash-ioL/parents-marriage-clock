@@ -18,6 +18,8 @@ Happy wedding anniversary mom and dad! Have a wonderful --th anniversary and I h
 - A kind letter to my parents
 - Smooth swaps between the clock page and the letter page through arrow button navigation
 
+In order to not show any personal information, my parent's real anniversary date & time wasn't used in this public version, and the background is blurred.
+
 ## How to use it
 
 - Click the deployed link
