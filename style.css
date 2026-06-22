@@ -147,7 +147,7 @@ body:not(:has(#clock-container.active)) #top-arrow-container {
         transform: translateX(0%);
         opacity: 1;
     }
-    --.67% {
+    16.67% {
         transform: translateX(100%);
         opacity:0
     }
@@ -162,7 +162,7 @@ body:not(:has(#clock-container.active)) #top-arrow-container {
         transform: translateX(-100%);
         opacity: 0;
     }
-    --.67% {
+    16.67% {
         transform: translateX(-100%);
         opacity: 0;
     }
