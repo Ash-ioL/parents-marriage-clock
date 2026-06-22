@@ -27,6 +27,7 @@ In order to not show any personal information, my parent's real anniversary date
 - Sit back and watch the magic
 
 <hr>
+
 ## Programming Languages Used:
 Javascript, HTML, CSS
 
