@@ -1,5 +1,7 @@
 # My Parents' Marriage Clock
 
+###### Video Demo: https://youtu.be/SUqgM_ie4QI?si=yR0SwjIOD9eaOhl2
+
 <hr>
 
 A marriage clock tracking the years, days, minutes, and seconds that my parents have been married to each other.
