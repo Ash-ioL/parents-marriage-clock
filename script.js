@@ -16,7 +16,7 @@ function updateTime(metric, time) {
     element.textContent = time;
 }
 
-const originalDate = 1279685700;
+const originalDate = 0123456789;
 const originalMetrics = {
     year: 2010,
     month: 6,
