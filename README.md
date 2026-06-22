@@ -9,6 +9,7 @@ A marriage clock tracking the years, days, minutes, and seconds that my parents 
 Happy wedding anniversary mom and dad! Have a wonderful --th anniversary and I hope you like this little gift I made.
 
 <hr>
+
 ## Features
 
 - Heart visual effects
