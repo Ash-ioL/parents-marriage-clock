@@ -395,3 +395,11 @@ body:not(:has(#clock-container.active)) #top-arrow-container {
     pointer-events: none;
     overflow: hidden;
 }
+
+#settings {
+    height: 4rem;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    top: 1rem;
+    right: 1rem;
+}
